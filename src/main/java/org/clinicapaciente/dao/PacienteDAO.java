@@ -19,13 +19,10 @@ public class PacienteDAO {
         public List<Paciente> buscarPorNome(String nome) throws SQLException {
             List<Paciente> pacientes = new ArrayList<>();
 
-            // Se o nome for vazio, buscamos todos os registros
             boolean buscarTodos = (nome == null || nome.trim().isEmpty());
 
-            // SQL BÁSICO: Busca todos os campos e ordena.
             String sql = "SELECT id, nome, cpf, dataNascimento, telefone FROM pacientes ";
 
-            // Adiciona a cláusula WHERE para filtragem parcial (LIKE)
             if (!buscarTodos) {
                 // Usamos ILIKE no PostgreSQL para busca case-insensitive (não diferencia maiúsculas/minúsculas)
                 sql += "WHERE nome ILIKE ? ";
@@ -37,7 +34,6 @@ public class PacienteDAO {
                  PreparedStatement stmt = conn.prepareStatement(sql)) {
 
                 if (!buscarTodos) {
-                    // Adiciona o caractere curinga '%' para busca parcial
                     stmt.setString(1, "%" + nome.trim() + "%");
                 }
 
@@ -56,10 +52,7 @@ public class PacienteDAO {
             return pacientes;
         }
 
-        // O método salvar agora insere dados no PostgreSQL
         public void salvar(Paciente p) throws SQLException {
-            // Usamos ON CONFLICT DO NOTHING para evitar erro de CPF duplicado,
-            // ou você pode usar INSERT para criar um novo registro.
             String sql = "INSERT INTO pacientes (nome, cpf, dataNascimento, telefone) VALUES (?, ?, ?, ?)";
 
             try (Connection conn = DBConnection.getConnection();
@@ -95,7 +88,6 @@ public class PacienteDAO {
             return pacientes;
         }
 
-        // Método para buscar por ID no PostgreSQL
         public Paciente buscarPorId(int id) throws SQLException {
             String sql = "SELECT id, nome, cpf, dataNascimento, telefone FROM pacientes WHERE id = ?";
             try (Connection conn = DBConnection.getConnection();
@@ -115,10 +107,9 @@ public class PacienteDAO {
                     }
                 }
             }
-            return null; // Retorna null se não encontrar
+            return null;
         }
 
-        // Método para atualizar no PostgreSQL
         /**
          * Atualiza um paciente existente no PostgreSQL.
          * @return O número de linhas afetadas (0 se o ID não for encontrado).

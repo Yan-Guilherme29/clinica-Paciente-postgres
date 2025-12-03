@@ -79,7 +79,7 @@
                                         <Insets left="40.0" right="50.0" top="20.0" />
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" onAction="#onListPacinteClick" prefHeight="33.0" prefWidth="100.0" text="Buscar" textFill="#000dff">
+                                <Button mnemonicParsing="false" onAction="#onListPacienteClick" prefHeight="33.0" prefWidth="100.0" text="Buscar" textFill="#000dff">
                                     <font>
                                         <Font size="14.0" />
                                     </font>
@@ -122,7 +122,7 @@
                                     </font>
                                 </Label>
                                 <TextField fx:id="txtTelefone" prefHeight="30.0" prefWidth="334.0" promptText="Digite o Telefone do Paciente" GridPane.rowIndex="1" />
-                                <TextField fx:id="txtPesquisar" prefHeight="30.0" prefWidth="334.0" promptText="Pesquisar Paciente" GridPane.rowIndex="5" />
+                                <TextField fx:id="txtPesquisar" prefHeight="30.0" prefWidth="334.0" promptText="Pesquisar pelo nome do Paciente" GridPane.rowIndex="5" />
                                 <DatePicker fx:id="txtDataNascimento" prefHeight="31.0" prefWidth="334.0" promptText="Selecione a Data de Nascimento do Paciente" GridPane.rowIndex="3" />
                             </children>
                             <VBox.margin>
