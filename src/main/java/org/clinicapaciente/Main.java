@@ -16,7 +16,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(new FileInputStream(PathFXML.pathbase() + "\\MainView.fxml"));
         Scene scene = new Scene(root, 800, 600);
-        stage.setTitle("Sistema Gerenciador de Pacientes");
+        stage.setTitle("Sistema de Gerenciamento de Clientes para uma Clínica!");
         stage.setScene(scene);
         stage.show();
     }
