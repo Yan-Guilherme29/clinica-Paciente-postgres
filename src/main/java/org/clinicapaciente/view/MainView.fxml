@@ -27,11 +27,6 @@
                         <MenuItem mnemonicParsing="false" text="Cadastrar" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                </Menu>
             </menus>
         </MenuBar>
         <HBox prefHeight="316.0" prefWidth="755.0">
@@ -66,9 +61,9 @@
                                         <Font size="14.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="txtID" prefHeight="30.0" prefWidth="342.0" promptText="ID" GridPane.rowIndex="1" />
-                                <TextField fx:id="txtNome" prefHeight="30.0" prefWidth="342.0" promptText="Digite o Nome" GridPane.rowIndex="3" />
-                                <TextField fx:id="txtCpf" prefHeight="30.0" prefWidth="342.0" promptText="Digite o CPF" GridPane.rowIndex="5" />
+                                <TextField fx:id="txtID" prefHeight="30.0" prefWidth="342.0" promptText="Digite o ID do Paciente" GridPane.rowIndex="1" />
+                                <TextField fx:id="txtNome" prefHeight="30.0" prefWidth="342.0" promptText="Digite o Nome do Paciente" GridPane.rowIndex="3" />
+                                <TextField fx:id="txtCpf" prefHeight="30.0" prefWidth="342.0" promptText="Digite o CPF do Paciente" GridPane.rowIndex="5" />
                             </children>
                             <VBox.margin>
                                 <Insets left="20.0" right="20.0" top="10.0" />
@@ -76,7 +71,7 @@
                         </GridPane>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#onCadastrarClick" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: #3dbdec;" text="Cadastrar">
+                                <Button mnemonicParsing="false" onAction="#onCadastrarClick" prefHeight="33.0" prefWidth="100.0" text="Cadastrar" textFill="#000dff">
                                     <font>
                                         <Font size="14.0" />
                                     </font>
@@ -84,7 +79,7 @@
                                         <Insets left="40.0" right="50.0" top="20.0" />
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" onAction="#onListPacinteClick" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: #3dbdec;" text="Buscar">
+                                <Button mnemonicParsing="false" onAction="#onListPacinteClick" prefHeight="33.0" prefWidth="100.0" text="Buscar" textFill="#000dff">
                                     <font>
                                         <Font size="14.0" />
                                     </font>
@@ -126,9 +121,9 @@
                                         <Font size="14.0" />
                                     </font>
                                 </Label>
-                                <TextField fx:id="txtTelefone" prefHeight="30.0" prefWidth="334.0" promptText="Digite o Telefone" GridPane.rowIndex="1" />
-                                <TextField fx:id="txtPesquisar" prefHeight="30.0" prefWidth="334.0" promptText="Pesquisar" GridPane.rowIndex="5" />
-                                <DatePicker fx:id="txtDataNascimento" prefHeight="31.0" prefWidth="334.0" promptText="Selecione a Data de Nascimento" GridPane.rowIndex="3" />
+                                <TextField fx:id="txtTelefone" prefHeight="30.0" prefWidth="334.0" promptText="Digite o Telefone do Paciente" GridPane.rowIndex="1" />
+                                <TextField fx:id="txtPesquisar" prefHeight="30.0" prefWidth="334.0" promptText="Pesquisar Paciente" GridPane.rowIndex="5" />
+                                <DatePicker fx:id="txtDataNascimento" prefHeight="31.0" prefWidth="334.0" promptText="Selecione a Data de Nascimento do Paciente" GridPane.rowIndex="3" />
                             </children>
                             <VBox.margin>
                                 <Insets left="20.0" right="20.0" top="10.0" />
@@ -136,7 +131,7 @@
                         </GridPane>
                         <HBox prefHeight="85.0" prefWidth="374.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#onAtualizarPacienteClick" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: #3dbdec;" text="Atualizar">
+                                <Button mnemonicParsing="false" onAction="#onAtualizarPacienteClick" prefHeight="33.0" prefWidth="100.0" text="Atualizar" textFill="#000dff">
                                     <font>
                                         <Font size="14.0" />
                                     </font>
@@ -144,7 +139,7 @@
                                         <Insets left="40.0" right="50.0" top="20.0" />
                                     </HBox.margin>
                                 </Button>
-                                <Button mnemonicParsing="false" onAction="#onExcluirPacienteClick" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: #3dbdec;" text="Excluir">
+                                <Button mnemonicParsing="false" onAction="#onExcluirPacienteClick" prefHeight="33.0" prefWidth="100.0" text="Excluir" textFill="#000dff">
                                     <font>
                                         <Font size="14.0" />
                                     </font>
@@ -160,11 +155,11 @@
         </HBox>
         <TableView fx:id="tabelaDados" prefHeight="206.0" prefWidth="776.0">
             <columns>
-                <TableColumn fx:id="colID" prefWidth="44.80001986026764" text="ID" />
-                <TableColumn fx:id="colNome" prefWidth="293.59996795654297" text="Nome" />
-                <TableColumn fx:id="colCpf" prefWidth="116.0" text="CPF" />
-                <TableColumn fx:id="colTelefone" prefWidth="138.40005493164062" text="Telefone" />
-                <TableColumn fx:id="colDataNascimento" prefWidth="162.4000244140625" text="Data de Nascimento" />
+                <TableColumn fx:id="colID" prefWidth="60.799989342689514" text="ID" />
+                <TableColumn fx:id="colNome" prefWidth="202.39998626708984" text="Nome" />
+                <TableColumn fx:id="colCpf" prefWidth="202.39998626708984" text="CPF" />
+                <TableColumn fx:id="colTelefone" prefWidth="152.80007934570312" text="Telefone" />
+                <TableColumn fx:id="colDataNascimento" prefWidth="136.0" text="Data de Nascimento" />
             </columns>
         </TableView>
     </children>
